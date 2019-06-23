@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { Animated, Text, View } from 'react-native';
+import { Animated, Text } from 'react-native';
 
-export default function FadeInFunctionalComponent() {
+export default function FadeIn() {
   const [fadeAnim, setFadeAnim] = useState(new Animated.Value(0));
   
   useEffect(() => {

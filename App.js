@@ -4,6 +4,7 @@ import { createStackNavigator, createAppContainer } from 'react-navigation';
 
 import FadeInClassComponent from './screens/FadeInClassComponent';
 import FadeInFunctionalComponent from './screens/FadeInFunctionalComponent';
+import ExpandableView from './screens/ExpandableView';
 
 class HomeScreen extends Component {
   _navigateTo(page) {
@@ -16,6 +17,7 @@ class HomeScreen extends Component {
       <View style={container}>
         <Text style={listItem} onPress={() => this._navigateTo('FadeInClassComponent')}>Fade In with Class Component</Text>
         <Text style={listItem} onPress={() => this._navigateTo('FadeInFunctional')}>Fade In with Functional Component</Text>
+        <Text style={listItem} onPress={() => this._navigateTo('ExpandableView')}>ExpandableView</Text>
       </View>
     );
   }
@@ -38,6 +40,12 @@ const AppNavigator = createStackNavigator({
     screen: FadeInFunctionalComponent,
     navigationOptions: () => ({
       title: 'Fade In with Functional Component'
+    })
+  },
+  ExpandableView: {
+    screen: ExpandableView,
+    navigationOptions: () => ({
+      title: 'Expandable View'
     })
   }
 },{
