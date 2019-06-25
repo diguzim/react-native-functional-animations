@@ -5,6 +5,7 @@ import { createStackNavigator, createAppContainer } from 'react-navigation';
 import FadeInClassComponent from './screens/FadeInClassComponent';
 import FadeInFunctionalComponent from './screens/FadeInFunctionalComponent';
 import ExpandableView from './screens/ExpandableView';
+import Accordion from './screens/Accordion';
 
 class HomeScreen extends Component {
   _navigateTo(page) {
@@ -18,6 +19,7 @@ class HomeScreen extends Component {
         <Text style={listItem} onPress={() => this._navigateTo('FadeInClassComponent')}>Fade In with Class Component</Text>
         <Text style={listItem} onPress={() => this._navigateTo('FadeInFunctional')}>Fade In with Functional Component</Text>
         <Text style={listItem} onPress={() => this._navigateTo('ExpandableView')}>ExpandableView</Text>
+        <Text style={listItem} onPress={() => this._navigateTo('Accordion')}>Accordion</Text>
       </View>
     );
   }
@@ -47,7 +49,13 @@ const AppNavigator = createStackNavigator({
     navigationOptions: () => ({
       title: 'Expandable View'
     })
-  }
+  },
+  Accordion: {
+    screen: Accordion,
+    navigationOptions: () => ({
+      title: 'Accordion'
+    })
+  },
 },{
   initialRouteName: "Home",
   defaultNavigationOptions: {
